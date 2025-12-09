@@ -1,26 +1,246 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   LB CUTS 2026 - LUXURY MONOCHROME SYSTEM
+   Est. Philadelphia • Tailor-Made Grooming
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-bg-0: #000000;
+  /* Pure Black */
+  --color-bg-1: #0A0A0A;
+  /* Deep Charcoal */
+  --color-bg-2: #121212;
+  /* Off-Black / Card BG */
+  --color-bg-3: #1A1A1A;
+  /* Lighter Charcoal */
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+  /* Soft Grey */
+  --color-text-tertiary: #525252;
+  /* Dark Grey Labels */
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  /* 8% White */
+  --color-border-visible: rgba(255, 255, 255, 0.15);
+  /* 15% White */
+
+  --color-accent-dim: rgba(0, 245, 160, 0.1);
+  /* Very subtle emerald hint */
+  --color-accent-glow: rgba(0, 245, 160, 0.4);
+  /* For active states only */
+
+  --ease-luxury: cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* "Apple" smooth */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-fade-in-up: fadeInUp 0.8s var(--ease-out-expo) both;
+  --animate-scale-reveal: scaleReveal 1.2s var(--ease-luxury) both;
+  --animate-subtle-zoom: subtleZoom 0.6s var(--ease-luxury) forwards;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CSS VARIABLES FOR COMPONENT USAGE
+   ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-0: #000000;
+  --bg-1: #0A0A0A;
+  --bg-2: #121212;
+  --text-primary: #FFFFFF;
+  --bg-glass: rgba(10, 10, 10, 0.6);
+  --border-alpha: rgba(255, 255, 255, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE RESETS & TYPOGRAPHY
+   ───────────────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-0);
+  color: var(--text-primary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Luxury Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UTILITY CLASSES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* TYPOGRAPHY */
+.font-display {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.label-text {
+  font-size: 0.75rem;
+  /* 12px */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+/* BORDERS & GLASS */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.border-luxury {
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: white;
+  color: black;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  transition: all 0.4s var(--ease-luxury);
+  border: 1px solid white;
+}
+
+.btn-primary:hover {
+  background: #E5E5E5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--color-border-visible);
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-outline:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   KEYFRAMES
+   ───────────────────────────────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes subtleZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.02);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CUSTOM SCROLLBAR
+   ───────────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.text-body-lg {
+
+  font-size: var(--text-subheading);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ═══ OVERLINE BADGE ═══ */
+.overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.overline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-alpha);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(12px);
+}
+
+.overline-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--emerald-start);
+  animation: pulse-glow 2s infinite ease-in-out;
 }
