@@ -42,6 +42,9 @@ export function SiteFooter() {
                     <p className="text-[9px] sm:text-[10px] text-white/30 font-light">
                         &copy; {currentYear} {siteConfig.businessName}.
                     </p>
+                    <p className="text-[9px] sm:text-[10px] font-light mt-4 text-white/30">
+                        Website designed by <span className="rainbow-glow font-bold">Innovation 7</span>
+                    </p>
                 </div>
             </Container>
         </footer>
