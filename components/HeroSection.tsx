@@ -3,13 +3,13 @@ import { Container } from "@/components/ui/Container";
 
 export function HeroSection() {
     return (
-        <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden w-full max-w-[100vw]">
             {/* Background - Deep Slate / Texture */}
             <div className="absolute inset-0 bg-[#050505] z-0" />
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0 pointer-events-none" />
 
             {/* Subtle Spotlight - Fixed positioning to prevent overflow */}
-            <div className="absolute top-0 right-0 w-[50vw] md:w-[60vw] h-[50vw] md:h-[60vw] bg-white/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/4" />
+            <div className="absolute top-0 right-0 w-[40vw] md:w-[50vw] h-[40vw] md:h-[50vw] bg-white/[0.03] blur-[120px] rounded-full pointer-events-none -translate-y-1/4 overflow-hidden" />
 
             <Container className="relative z-10 w-full grid lg:grid-cols-12 gap-8 lg:gap-8 items-center">
 

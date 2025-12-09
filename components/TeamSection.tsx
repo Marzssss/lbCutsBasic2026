@@ -4,10 +4,10 @@ import { team } from "@/lib/teamData";
 
 export function TeamSection() {
     return (
-        <section id="team" className="py-16 sm:py-24 bg-[#080808] overflow-hidden">
+        <section id="team" className="py-16 sm:py-24 bg-[#080808] w-full max-w-[100vw]">
             <Container>
-                <div className="flex flex-col md:flex-row justify-between items-end mb-10 sm:mb-16 border-b border-white/5 pb-6 sm:pb-8">
-                    <div>
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16 border-b border-white/5 pb-6 sm:pb-8">
+                    <div className="text-left">
                         <span className="label-text mb-3 sm:mb-4 block">The Atelier</span>
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-display text-white">Barbers</h2>
                     </div>

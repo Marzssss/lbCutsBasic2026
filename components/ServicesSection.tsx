@@ -4,13 +4,13 @@ import { services } from "@/lib/servicesData";
 
 export function ServicesSection() {
     return (
-        <section id="services" className="py-16 sm:py-24 bg-[#050505] overflow-hidden">
+        <section id="services" className="py-16 sm:py-24 bg-[#050505] w-full max-w-[100vw]">
             <Container>
                 {/* Header */}
                 <div className="mb-12 sm:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 border-b border-white/10 pb-6 sm:pb-8">
-                    <div>
-                        <span className="label-text mb-3 sm:mb-4 block">Rate Card</span>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white">Service Menu</h2>
+                    <div className="text-left">
+                        <span className="label-text mb-3 sm:mb-4 block text-left">Rate Card</span>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white text-left">Service Menu</h2>
                     </div>
                 </div>
 
