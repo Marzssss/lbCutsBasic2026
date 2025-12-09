@@ -20,9 +20,9 @@ export function AboutSection() {
     return (
         <section className="py-16 sm:py-24 bg-[#080808] border-t border-white/5 w-full max-w-[100vw]">
             <Container>
-                <div className="grid lg:grid-cols-12 gap-10 sm:gap-16 lg:gap-24 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 lg:gap-24 w-full">
                     {/* Left Column - Narrative */}
-                    <div className="col-span-12 lg:col-span-5 text-left w-full max-w-full">
+                    <div className="col-span-1 lg:col-span-5 text-left w-full max-w-full">
                         <span className="label-text mb-4 sm:mb-6 block text-left">About LB Cuts</span>
 
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-display text-white mb-6 sm:mb-8 leading-tight break-words max-w-full">
@@ -41,7 +41,7 @@ export function AboutSection() {
                     </div>
 
                     {/* Right Column - Why Clients Come Back */}
-                    <div className="col-span-12 lg:col-span-7 flex flex-col justify-center text-left w-full max-w-full">
+                    <div className="col-span-1 lg:col-span-7 flex flex-col justify-center text-left">
                         <span className="label-text mb-6 sm:mb-8 block lg:hidden text-left">The Standard</span>
 
                         <div className="grid gap-4 sm:gap-6">
