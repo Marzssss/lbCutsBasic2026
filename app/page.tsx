@@ -11,10 +11,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[var(--bg-0)] text-white selection:bg-white/20 selection:text-white">
+    <main className="min-h-screen bg-[var(--bg-0)] text-white selection:bg-white/20 selection:text-white overflow-x-hidden w-full max-w-full">
       <Header />
 
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-x-hidden">
         <HeroSection />
         <AboutSection />
         <ServicesSection />
